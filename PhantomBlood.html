@@ -31,6 +31,8 @@ header {
   padding: 20px;
   display: grid;
   gap: 20px;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 @media (min-width: 700px) {
@@ -53,6 +55,8 @@ header {
   cursor: pointer;
   transition: 0.3s ease;
   box-shadow: 0 0 12px rgba(0, 18, 182, 0.4);
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .volume:hover {
@@ -147,7 +151,7 @@ header {
 <body>
 
 <header>JoJo’s Bizarre Adventure – Part 1: Phantom Blood</header>
-
+<button id="home-btn" onclick="goHome()">🏠 Home</button>
 <div id="volume-list">
 
   <div class="volume" onclick="openPDF('Volume_1_Dio_the_Invader.pdf')">
@@ -179,7 +183,6 @@ header {
 
 <div id="reader">
   <button id="back-btn" onclick="closePDF()">← Back</button>
-  <button id="home-btn" onclick="goHome()">🏠 Home</button>
 
 
   <canvas id="pdf-canvas"></canvas>
@@ -241,6 +244,10 @@ function nextPage() {
 function goHome() {
   window.location.href = "https://penyu444.github.io/JojosBizarreAdventureStorage/JojosBizarreAdventure.html";
 }
+
+document.addEventListener("dragstart", (e) => e.preventDefault());
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+
 
 </script>
 
