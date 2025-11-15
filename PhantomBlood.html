@@ -128,9 +128,6 @@ header {
 }
 
 #home-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   padding: 10px 18px;
   background: #3366ff;
   color: white;
@@ -139,8 +136,9 @@ header {
   border-radius: 6px;
   cursor: pointer;
   box-shadow: 0 0 10px #000;
-  z-index: 99999;
+  margin-bottom: 20px;   /* spacing under header */
 }
+
 
 
 #prev-zone { left: 0; }
@@ -151,9 +149,8 @@ header {
 <body>
 
 <header>JoJo’s Bizarre Adventure – Part 1: Phantom Blood</header>
-
+<button id="home-btn" onclick="goHome()">🏠 Home</button>
 <div id="volume-list">
-  <button id="home-btn" onclick="goHome()">🏠 Home</button>
 
   <div class="volume" onclick="openPDF('Volume_1_Dio_the_Invader.pdf')">
     <img src="vol1cover.png" alt="Volume 1 Cover">
