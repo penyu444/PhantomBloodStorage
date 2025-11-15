@@ -212,8 +212,11 @@ async function openPDF(url) {
 
 function closePDF() {
   document.getElementById("reader").style.display = "none";
-  document.body.style.overflow = "auto";
+  document.body.style.overflow = "auto"; // <-- FIX: restore scroll
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  pdfDoc = null;
 }
+
 
 function renderPage(num) {
   pdfDoc.getPage(num).then(function(page) {
