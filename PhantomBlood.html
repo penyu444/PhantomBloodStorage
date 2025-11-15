@@ -122,6 +122,10 @@ header {
   height: calc(100% - 60px);
   z-index: 1;
 }
+* {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
 
 #prev-zone { left: 0; }
 #next-zone { right: 0; }
@@ -220,6 +224,8 @@ function nextPage() {
   pageNum++;
   renderPage(pageNum);
 }
+document.addEventListener("dragstart", (e) => e.preventDefault());
+document.addEventListener("contextmenu", (e) => e.preventDefault());
 </script>
 
 </body>
